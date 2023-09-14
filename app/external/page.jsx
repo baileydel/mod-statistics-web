@@ -13,9 +13,9 @@ function External() {
 
   const callApi = async () => {
     setState(previous => ({ ...previous, isLoading: true }));
-
+    
     try {
-      const response = await fetch('/api/shows');
+      const response = await fetch('api/test');
       const data = await response.json();
 
       setState(previous => ({ ...previous, response: data, error: undefined }));
@@ -25,7 +25,7 @@ function External() {
       setState(previous => ({ ...previous, isLoading: false }));
     }
   };
-
+ 
   const handle = (event, fn) => {
     event.preventDefault();
     fn();
